@@ -17,6 +17,7 @@ public class HelloController {
 
     public HelloController()
     {
+        // src\main\resources\com\example\latinvocabulary/db.txt
         File path = new File("src\\main\\resources\\com\\example\\latinvocabulary/db.txt");
         try {
             Scanner read = new Scanner(path);
@@ -29,6 +30,7 @@ public class HelloController {
             throw new RuntimeException(e);
         }
 
+        System.out.println(vocabulary);
         tempKey = "";
     }
     public void close(MouseEvent mouseEvent) {
@@ -36,6 +38,7 @@ public class HelloController {
     }
 
     public void randomWord(MouseEvent mouseEvent) {
+        // взять все ключи и иметь возможность по ним пройтись
         Iterator<String> iterator = vocabulary.keySet().iterator();
         String[] temp = new String[vocabulary.size()];
 
